@@ -5,7 +5,7 @@
 
 **Miguel Ingram** | Systems Architect & AI Researcher
 
-You might notice my contribution graph is unusually active (~9,000+ commits/year). This is not spam—it is **granular observability**. I treat my development process as a continuous experiment, where atomic commits drive automated research pipelines.
+You might notice my contribution graph is unusually active (~8,000+ commits/year). This is not spam—it is **granular observability**. I treat my development process as a continuous experiment, where atomic commits drive automated research pipelines.
 
 #### 🛠️ What I'm Building
 * **[The Mastery Engine](https://github.com/ImmortalDemonGod/mastery-engine):** A pedagogical operating system that uses **Runtime AST Mutation** and **Shadow Worktrees** to stress-test engineering skills.
