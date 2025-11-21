@@ -5,7 +5,7 @@
 
 **Miguel Ingram** | Systems Architect & AI Researcher
 
-You might notice my contribution graph is unusually active. I treat software development as a continuous scientific experiment. My workflow is defined by **High-Velocity Iteration** (~8,000 commits/year) and **Granular Observability**. I treat my development process as a continuous experiment, where atomic commits drive automated research pipelines.
+You might notice my contribution graph is unusually active. My workflow is defined by **High-Velocity Iteration** (~8,000 commits/year) and **Granular Observability**. I treat my development process as a continuous experiment, where atomic commits drive automated research pipelines.
 
 
 #### 🛠️ What I'm Building
