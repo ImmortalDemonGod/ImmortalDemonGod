@@ -17,11 +17,13 @@ My background is rooted in high-stakes engineering. I started off in the US Navy
 
 #### 🏃 Athletic Training
 
-Running, cycling, and strength training tracked on [Strava](https://www.strava.com). Hover over cells for activity details.
+Running, cycling, and strength training tracked on [Strava](https://www.strava.com).
 
 <!-- STRAVA-HEATMAP-START -->
 ![Strava Activity Heatmap](./heatmap.svg)
 <!-- STRAVA-HEATMAP-END -->
+
+**131 activities** • **1,032 km** • **61 hours** • **105 active days**
 
 *Automatically updated daily from Strava API*
 
