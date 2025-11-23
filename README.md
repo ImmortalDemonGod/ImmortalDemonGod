@@ -3,7 +3,7 @@
 
 > "I don't just write code; I build systems that generate data."
 
-**Miguel Ingram** | Systems Architect & AI Researcher
+**Miguel Ingram** | AI Researcher
 
 You might notice my contribution graph is unusually active. My workflow is defined by **High-Velocity Iteration** (~8,000 commits/year) and **Granular Observability**. I treat my development process as a continuous experiment, where atomic commits drive automated research pipelines.
 
@@ -13,7 +13,7 @@ You might notice my contribution graph is unusually active. My workflow is defin
 * **[Neural Affinity Framework](https://github.com/ImmortalDemonGod/arc-taxonomy-reproduction):** Research proving the "Compositional Gap" in Transformers. Validated against 302+ fine-tuned models.
 
 #### 🧬 The Philosophy
-My background in **Systems Biology** informs my AI work. I approach Large Language Models not as static math equations, but as complex adaptive systems requiring mechanistic interpretability and rigorous "dissection."
+My background is rooted in high-stakes engineering. I started off in the US Navy as a **Nuclear Electronics Technician**, where I developed an obsessive focus on systems reliability and diagnostics. I try to translate that operational rigor into software engineering. My current focus is continuing my research, improving my public outreach and systematically increasing my competitive programming rating. 
 
 ---
 *Open for code audits and architectural consulting.*
