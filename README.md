@@ -17,7 +17,7 @@ My background is rooted in high-stakes engineering. I started off in the US Navy
 
 #### 🏃 Athletic Training
 
-Running, cycling, and strength training activity from [Strava](https://www.strava.com).
+Running, cycling, and strength training tracked on [Strava](https://www.strava.com). Hover over cells for activity details.
 
 <!-- STRAVA-HEATMAP-START -->
 ![Strava Activity Heatmap](./heatmap.svg)
