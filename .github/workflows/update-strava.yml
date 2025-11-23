@@ -74,8 +74,8 @@ jobs:
           # Create the stats line
           STATS_LINE="**${{ env.TOTAL_ACTIVITIES }} activities** • **${{ env.TOTAL_DISTANCE }} km** • **${{ env.TOTAL_TIME }} hours** • **${{ env.ACTIVE_DAYS }} active days**"
           
-          # Create the image reference
-          IMAGE_TAG='![Strava Activity Heatmap](./heatmap.svg)'
+          # Create the image reference with absolute URL
+          IMAGE_TAG='![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)'
           
           # Update README between markers with both image and stats
           awk -v img="$IMAGE_TAG" -v stats="$STATS_LINE" '
