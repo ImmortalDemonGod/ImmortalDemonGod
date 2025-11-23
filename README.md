@@ -20,7 +20,10 @@ My background is rooted in high-stakes engineering. I started off in the US Navy
 Running, cycling, and strength training tracked on [Strava](https://www.strava.com).
 
 <!-- STRAVA-HEATMAP-START -->
+
 ![Strava Activity Heatmap](./heatmap.svg)
+
+**12 activities** • **97 km** • **9 hours** • **105 active days**
 <!-- STRAVA-HEATMAP-END -->
 
 **131 activities** • **1,032 km** • **61 hours** • **105 active days**
