@@ -9,6 +9,7 @@
   "metricType": "distance",
   "colorScheme": "blue",
   "showStats": true,
+  "statTypes": ["yearly"],
   "dateRange": "1year",
   "cellSize": 10,
   "includePRs": true,
