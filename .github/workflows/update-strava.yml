@@ -36,14 +36,58 @@ jobs:
         run: |
           ./strava-heatmap -generate > heatmap.svg
       
-      - name: Update README with image reference
+      - name: Fetch Strava statistics
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: |
+          # Get access token
+          ACCESS_TOKEN=$(curl -s -X POST https://www.strava.com/oauth/token \
+            -F client_id=$STRAVA_CLIENT_ID \
+            -F client_secret=$STRAVA_CLIENT_SECRET \
+            -F grant_type=refresh_token \
+            -F refresh_token=$STRAVA_REFRESH_TOKEN | jq -r '.access_token')
+          
+          # Get athlete stats
+          STATS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+            "https://www.strava.com/api/v3/athletes/$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://www.strava.com/api/v3/athlete | jq -r '.id')/stats")
+          
+          # Extract yearly totals
+          TOTAL_ACTIVITIES=$(echo $STATS | jq -r '.recent_run_totals.count + .recent_ride_totals.count + .recent_swim_totals.count')
+          TOTAL_DISTANCE=$(echo $STATS | jq -r '(.recent_run_totals.distance + .recent_ride_totals.distance + .recent_swim_totals.distance) / 1000 | floor')
+          TOTAL_TIME=$(echo $STATS | jq -r '(.recent_run_totals.moving_time + .recent_ride_totals.moving_time + .recent_swim_totals.moving_time) / 3600 | floor')
+          
+          # Count active days from recent activities (approximate)
+          ACTIVE_DAYS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+            "https://www.strava.com/api/v3/athlete/activities?per_page=200&after=$(date -d '1 year ago' +%s)" | \
+            jq -r 'map(.start_date | split("T")[0]) | unique | length')
+          
+          # Save to file for next step
+          echo "TOTAL_ACTIVITIES=$TOTAL_ACTIVITIES" >> $GITHUB_ENV
+          echo "TOTAL_DISTANCE=$TOTAL_DISTANCE" >> $GITHUB_ENV
+          echo "TOTAL_TIME=$TOTAL_TIME" >> $GITHUB_ENV
+          echo "ACTIVE_DAYS=$ACTIVE_DAYS" >> $GITHUB_ENV
+      
+      - name: Update README with image reference and stats
+        run: |
+          # Create the stats line
+          STATS_LINE="**${{ env.TOTAL_ACTIVITIES }} activities** • **${{ env.TOTAL_DISTANCE }} km** • **${{ env.TOTAL_TIME }} hours** • **${{ env.ACTIVE_DAYS }} active days**"
+          
           # Create the image reference
           IMAGE_TAG='![Strava Activity Heatmap](./heatmap.svg)'
           
-          # Update README between markers
-          awk -v img="$IMAGE_TAG" '
-          /<!-- STRAVA-HEATMAP-START -->/ {print; print img; skip=1; next}
+          # Update README between markers with both image and stats
+          awk -v img="$IMAGE_TAG" -v stats="$STATS_LINE" '
+          /<!-- STRAVA-HEATMAP-START -->/ {
+            print
+            print ""
+            print img
+            print ""
+            print stats
+            skip=1
+            next
+          }
           /<!-- STRAVA-HEATMAP-END -->/ {skip=0}
           !skip
           ' README.md > README.tmp && mv README.tmp README.md
