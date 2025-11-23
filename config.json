@@ -8,7 +8,7 @@
   ],
   "metricType": "distance",
   "colorScheme": "blue",
-  "showStats": false,
+  "showStats": true,
   "dateRange": "1year",
   "cellSize": 10,
   "includePRs": true,
