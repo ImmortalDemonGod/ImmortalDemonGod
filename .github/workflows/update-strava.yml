@@ -28,19 +28,31 @@ jobs:
         run: |
           go build -o strava-heatmap ./cmd/strava-heatmap
       
-      - name: Generate and update heatmap
+      - name: Generate heatmap SVG
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: |
-          ./strava-heatmap -update
+          ./strava-heatmap -generate > heatmap.svg
       
-      - name: Commit updated README
+      - name: Update README with image reference
+        run: |
+          # Create the image reference
+          IMAGE_TAG='![Strava Activity Heatmap](./heatmap.svg)'
+          
+          # Update README between markers
+          awk -v img="$IMAGE_TAG" '
+          /<!-- STRAVA-HEATMAP-START -->/ {print; print img; skip=1; next}
+          /<!-- STRAVA-HEATMAP-END -->/ {skip=0}
+          !skip
+          ' README.md > README.tmp && mv README.tmp README.md
+      
+      - name: Commit updated README and heatmap
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md heatmap.svg
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
