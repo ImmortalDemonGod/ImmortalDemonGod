@@ -36,7 +36,7 @@ jobs:
         run: |
           ./strava-heatmap -generate > heatmap.svg
       
-      - name: Fetch Strava statistics
+      - name: Fetch Strava statistics (rolling 365 days)
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
@@ -49,21 +49,33 @@ jobs:
             -F grant_type=refresh_token \
             -F refresh_token=$STRAVA_REFRESH_TOKEN | jq -r '.access_token')
           
-          # Get athlete stats
-          STATS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
-            "https://www.strava.com/api/v3/athletes/$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://www.strava.com/api/v3/athlete | jq -r '.id')/stats")
+          # Calculate timestamp for 1 year ago
+          ONE_YEAR_AGO=$(date -d '365 days ago' +%s)
           
-          # Extract yearly totals (ytd_ for year-to-date to match heatmap range)
-          TOTAL_ACTIVITIES=$(echo $STATS | jq -r '.ytd_run_totals.count + .ytd_ride_totals.count + .ytd_swim_totals.count')
-          TOTAL_DISTANCE=$(echo $STATS | jq -r '(.ytd_run_totals.distance + .ytd_ride_totals.distance + .ytd_swim_totals.distance) / 1000 | round')
-          TOTAL_TIME=$(echo $STATS | jq -r '(.ytd_run_totals.moving_time + .ytd_ride_totals.moving_time + .ytd_swim_totals.moving_time) / 3600 | round')
+          # Fetch all activities from last 365 days (paginated)
+          ALL_ACTIVITIES="[]"
+          PAGE=1
+          while true; do
+            ACTIVITIES=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+              "https://www.strava.com/api/v3/athlete/activities?per_page=200&page=$PAGE&after=$ONE_YEAR_AGO")
+            
+            # Break if no more activities
+            if [ "$(echo $ACTIVITIES | jq '. | length')" -eq 0 ]; then
+              break
+            fi
+            
+            # Append to all activities
+            ALL_ACTIVITIES=$(echo "$ALL_ACTIVITIES $ACTIVITIES" | jq -s 'add')
+            PAGE=$((PAGE + 1))
+          done
           
-          # Count active days from recent activities (approximate)
-          ACTIVE_DAYS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
-            "https://www.strava.com/api/v3/athlete/activities?per_page=200&after=$(date -d '1 year ago' +%s)" | \
-            jq -r 'map(.start_date | split("T")[0]) | unique | length')
+          # Calculate stats from all activities
+          TOTAL_ACTIVITIES=$(echo $ALL_ACTIVITIES | jq 'length')
+          TOTAL_DISTANCE=$(echo $ALL_ACTIVITIES | jq '[.[].distance] | add / 1000 | round')
+          TOTAL_TIME=$(echo $ALL_ACTIVITIES | jq '[.[].moving_time] | add / 3600 | round')
+          ACTIVE_DAYS=$(echo $ALL_ACTIVITIES | jq '[.[].start_date | split("T")[0]] | unique | length')
           
-          # Save to file for next step
+          # Save to environment for next step
           echo "TOTAL_ACTIVITIES=$TOTAL_ACTIVITIES" >> $GITHUB_ENV
           echo "TOTAL_DISTANCE=$TOTAL_DISTANCE" >> $GITHUB_ENV
           echo "TOTAL_TIME=$TOTAL_TIME" >> $GITHUB_ENV
