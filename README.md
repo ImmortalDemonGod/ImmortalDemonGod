@@ -26,8 +26,6 @@ Running, cycling, and strength training tracked on [Strava](https://www.strava.c
 **12 activities** • **97 km** • **9 hours** • **105 active days**
 <!-- STRAVA-HEATMAP-END -->
 
-**131 activities** • **1,032 km** • **61 hours** • **105 active days**
-
 *Automatically updated daily from Strava API*
 
 ---
