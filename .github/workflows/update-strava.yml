@@ -53,10 +53,10 @@ jobs:
           STATS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
             "https://www.strava.com/api/v3/athletes/$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://www.strava.com/api/v3/athlete | jq -r '.id')/stats")
           
-          # Extract yearly totals
-          TOTAL_ACTIVITIES=$(echo $STATS | jq -r '.recent_run_totals.count + .recent_ride_totals.count + .recent_swim_totals.count')
-          TOTAL_DISTANCE=$(echo $STATS | jq -r '(.recent_run_totals.distance + .recent_ride_totals.distance + .recent_swim_totals.distance) / 1000 | floor')
-          TOTAL_TIME=$(echo $STATS | jq -r '(.recent_run_totals.moving_time + .recent_ride_totals.moving_time + .recent_swim_totals.moving_time) / 3600 | floor')
+          # Extract yearly totals (ytd_ for year-to-date to match heatmap range)
+          TOTAL_ACTIVITIES=$(echo $STATS | jq -r '.ytd_run_totals.count + .ytd_ride_totals.count + .ytd_swim_totals.count')
+          TOTAL_DISTANCE=$(echo $STATS | jq -r '(.ytd_run_totals.distance + .ytd_ride_totals.distance + .ytd_swim_totals.distance) / 1000 | round')
+          TOTAL_TIME=$(echo $STATS | jq -r '(.ytd_run_totals.moving_time + .ytd_ride_totals.moving_time + .ytd_swim_totals.moving_time) / 3600 | round')
           
           # Count active days from recent activities (approximate)
           ACTIVE_DAYS=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
