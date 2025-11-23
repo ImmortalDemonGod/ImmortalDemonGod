@@ -53,27 +53,38 @@ jobs:
           ONE_YEAR_AGO=$(date -d '365 days ago' +%s)
           
           # Fetch all activities from last 365 days (paginated)
-          ALL_ACTIVITIES="[]"
+          echo "[]" > /tmp/all_activities.json
           PAGE=1
-          while true; do
-            ACTIVITIES=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
-              "https://www.strava.com/api/v3/athlete/activities?per_page=200&page=$PAGE&after=$ONE_YEAR_AGO")
+          
+          while [ $PAGE -le 10 ]; do  # Max 10 pages (2000 activities) to prevent infinite loops
+            echo "Fetching page $PAGE..."
+            curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+              "https://www.strava.com/api/v3/athlete/activities?per_page=200&page=$PAGE&after=$ONE_YEAR_AGO" \
+              > /tmp/page_$PAGE.json
             
-            # Break if no more activities
-            if [ "$(echo $ACTIVITIES | jq '. | length')" -eq 0 ]; then
+            # Check if page has activities
+            ACTIVITY_COUNT=$(jq 'length' /tmp/page_$PAGE.json)
+            echo "Page $PAGE has $ACTIVITY_COUNT activities"
+            
+            if [ "$ACTIVITY_COUNT" -eq 0 ]; then
+              echo "No more activities, stopping"
               break
             fi
             
-            # Append to all activities
-            ALL_ACTIVITIES=$(echo "$ALL_ACTIVITIES $ACTIVITIES" | jq -s 'add')
+            # Append to all activities using file-based approach
+            jq -s 'add' /tmp/all_activities.json /tmp/page_$PAGE.json > /tmp/temp.json
+            mv /tmp/temp.json /tmp/all_activities.json
+            
             PAGE=$((PAGE + 1))
           done
           
-          # Calculate stats from all activities
-          TOTAL_ACTIVITIES=$(echo $ALL_ACTIVITIES | jq 'length')
-          TOTAL_DISTANCE=$(echo $ALL_ACTIVITIES | jq '[.[].distance] | add / 1000 | round')
-          TOTAL_TIME=$(echo $ALL_ACTIVITIES | jq '[.[].moving_time] | add / 3600 | round')
-          ACTIVE_DAYS=$(echo $ALL_ACTIVITIES | jq '[.[].start_date | split("T")[0]] | unique | length')
+          # Calculate stats from all activities using the file
+          TOTAL_ACTIVITIES=$(jq 'length' /tmp/all_activities.json)
+          TOTAL_DISTANCE=$(jq '[.[].distance] | add / 1000 | round' /tmp/all_activities.json)
+          TOTAL_TIME=$(jq '[.[].moving_time] | add / 3600 | round' /tmp/all_activities.json)
+          ACTIVE_DAYS=$(jq '[.[].start_date | split("T")[0]] | unique | length' /tmp/all_activities.json)
+          
+          echo "Calculated stats: $TOTAL_ACTIVITIES activities, $TOTAL_DISTANCE km, $TOTAL_TIME hours, $ACTIVE_DAYS days"
           
           # Save to environment for next step
           echo "TOTAL_ACTIVITIES=$TOTAL_ACTIVITIES" >> $GITHUB_ENV
