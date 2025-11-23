@@ -15,6 +15,14 @@ You might notice my contribution graph is unusually active. My workflow is defin
 #### 🧬 The Philosophy
 My background is rooted in high-stakes engineering. I started off in the US Navy as a **Nuclear Electronics Technician**, where I developed an obsessive focus on systems reliability and diagnostics. I try to translate that operational rigor into software engineering. My current focus is continuing my research, improving my public outreach and systematically increasing my competitive programming rating. 
 
+#### 🏃 Training Activity
+
+<!-- STRAVA-HEATMAP-START -->
+<!-- STRAVA-HEATMAP-END -->
+
+*Automatically updated daily from Strava API*
+
+---
 *Open for code audits and architectural consulting.*
 ---
 
