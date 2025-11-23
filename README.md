@@ -23,7 +23,7 @@ Running, cycling, and strength training tracked on [Strava](https://www.strava.c
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-**12 activities** • **97 km** • **9 hours** • **105 active days**
+**131 activities** • **1053 km** • **119 hours** • **105 active days**
 <!-- STRAVA-HEATMAP-END -->
 
 *Automatically updated daily from Strava API*
