@@ -64,11 +64,15 @@ Research proving the **["Compositional Gap"](https://github.com/ImmortalDemonGod
 
 ## 🧬 The Philosophy
 
+> *I operate as an independent lab to bypass the "Golden Handcuffs" of corporate IP capture. My goal is not just research output, but **Operational Sovereignty**—owning the compute, the code, and the discoveries.*
+
 My background is rooted in high-stakes engineering. I started in the **US Navy as a Nuclear Electronics Technician**, where I developed an obsessive focus on:
 
 - ⚙️ **Systems Reliability:** Zero-tolerance for failure in critical systems
 - 🔍 **Diagnostic Precision:** Root cause analysis under pressure
 - 📐 **Operational Rigor:** Translating Navy discipline into code
+
+
 ---
 
 ## 🏃 Athletic Training
