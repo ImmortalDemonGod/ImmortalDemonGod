@@ -60,6 +60,14 @@ Research proving the **["Compositional Gap"](https://github.com/ImmortalDemonGod
 </tr>
 </table>
 
+### 🧬 Geometric Deep Learning (Research Artifact)
+**[RNA_PREDICT](https://github.com/ImmortalDemonGod/RNA_PREDICT)**
+*Status: [Internal Tool / Reference Implementation]*
+
+A modular pipeline for 3D RNA folding using **TorsionBERT**, **MP-NeRF**, and **SE(3) Diffusion**.
+* **The Stack:** PyTorch Lightning, Hydra, Equivariant Neural Networks.
+* **The Objective:** Applying geometric constraints to biological foundation models outside of corporate walled gardens.
+
 ---
 
 ## 🧬 The Philosophy
