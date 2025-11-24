@@ -12,11 +12,9 @@
 
 ## 🎯 The Workflow
 
-<!-- STREAK-CARD-START -->
-<p align="right">
-  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,0d1117,0b1220,152238&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
-</p>
-<!-- STREAK-CARD-END -->
+<div style="display: flex; align-items: flex-start; gap: 24px;">
+
+  <div style="flex: 1; min-width: 0;">
 
 You might notice my contribution graph is unusually active. My workflow is defined by:
 
@@ -27,6 +25,20 @@ You might notice my contribution graph is unusually active. My workflow is defin
 - **⚡ Atomic Commits:** Driving automated research pipelines
 
 *I treat development as a continuous experiment where each commit generates data.*
+
+  </div>
+
+  <div style="flex: 0 0 400px;">
+
+<!-- STREAK-CARD-START -->
+<p align="right">
+  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,0d1117,0b1220,152238&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
+</p>
+<!-- STREAK-CARD-END -->
+
+  </div>
+
+</div>
 
 ---
 
