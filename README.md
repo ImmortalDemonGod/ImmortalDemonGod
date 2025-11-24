@@ -12,16 +12,10 @@
 
 ## 🎯 The Workflow
 
-<!-- STREAK-CARD-START -->
-<p align="right">
-  <img align="right" src="https://streak-stats.demolab.com?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,0d1117,0b1220,152238&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
-</p>
-<!-- STREAK-CARD-END -->
-
 You might notice my contribution graph is unusually active. My workflow is defined by:
 
 <!-- GITHUB-STATS-START -->
-- **📊 High-Velocity Iteration:** ~2370 commits/year
+- **📊 High-Velocity Iteration:** ~2370 commits/year since 2019
 <!-- GITHUB-STATS-END -->
 - **🔬 Granular Observability:** Every change is tracked
 - **⚡ Atomic Commits:** Driving automated research pipelines
@@ -96,11 +90,13 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 ---
 
-## 📫 Let's Connect
-
 <div align="center">
 
-### Open for code audits and architectural consulting
+### 📡 Signal & Contract
+
+**Status:** Allocating cycles for high-leverage architectural audits and specialized R&D contracts.
+
+*Objective: Funding next-generation compute acquisition (DGX Sparks & H100 NVLink Cluster).*
 
 [![Email](https://img.shields.io/badge/Email-miguel.ingram.research%40gmail.com-blue?style=for-the-badge&logo=gmail)](mailto:miguel.ingram.research@gmail.com)
 
