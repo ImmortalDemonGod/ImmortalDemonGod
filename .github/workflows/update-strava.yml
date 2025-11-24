@@ -36,6 +36,35 @@ jobs:
         run: |
           ./strava-heatmap -generate > heatmap.svg
       
+      - name: Calculate GitHub contribution statistics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch total contributions using GitHub API
+          TOTAL_CONTRIBUTIONS=$(curl -s -H "Authorization: bearer $GITHUB_TOKEN" -X POST -d '
+          {
+            "query": "query { user(login: \"ImmortalDemonGod\") { contributionsCollection { contributionCalendar { totalContributions } } } }"
+          }' https://api.github.com/graphql | jq -r '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          
+          # Get account creation date (Nov 29, 2019 based on streak stats)
+          ACCOUNT_START="2019-11-29"
+          CURRENT_DATE=$(date +%Y-%m-%d)
+          
+          # Calculate years since account creation
+          DAYS_SINCE_START=$(( ( $(date -d "$CURRENT_DATE" +%s) - $(date -d "$ACCOUNT_START" +%s) ) / 86400 ))
+          YEARS_SINCE_START=$(echo "scale=2; $DAYS_SINCE_START / 365.25" | bc)
+          
+          # Calculate commits per year
+          COMMITS_PER_YEAR=$(echo "scale=0; $TOTAL_CONTRIBUTIONS / $YEARS_SINCE_START" | bc)
+          
+          echo "Total contributions: $TOTAL_CONTRIBUTIONS"
+          echo "Years active: $YEARS_SINCE_START"
+          echo "Commits per year: $COMMITS_PER_YEAR"
+          
+          # Save to environment
+          echo "COMMITS_PER_YEAR=$COMMITS_PER_YEAR" >> $GITHUB_ENV
+          echo "TOTAL_CONTRIBUTIONS=$TOTAL_CONTRIBUTIONS" >> $GITHUB_ENV
+      
       - name: Fetch Strava statistics (rolling 365 days)
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
@@ -115,14 +144,31 @@ jobs:
           !skip
           ' README.md > README.tmp && mv README.tmp README.md
       
+      - name: Update README_redesign with GitHub stats
+        run: |
+          # Create the commits/year line
+          COMMITS_LINE="- **📊 High-Velocity Iteration:** ~${{ env.COMMITS_PER_YEAR }} commits/year"
+          
+          # Update README_redesign.md between markers
+          awk -v commits="$COMMITS_LINE" '
+          /<!-- GITHUB-STATS-START -->/ {
+            print
+            print commits
+            skip=1
+            next
+          }
+          /<!-- GITHUB-STATS-END -->/ {skip=0}
+          !skip
+          ' README_redesign.md > README_redesign.tmp && mv README_redesign.tmp README_redesign.md
+      
       - name: Commit updated README and heatmap
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md heatmap.svg
+          git add README.md README_redesign.md heatmap.svg
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: update Strava heatmap [automated]"
+            git commit -m "chore: update Strava heatmap and GitHub stats [automated]"
             git push
           fi
