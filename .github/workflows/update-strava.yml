@@ -40,11 +40,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Fetch total contributions using GitHub API
-          TOTAL_CONTRIBUTIONS=$(curl -s -H "Authorization: bearer $GITHUB_TOKEN" -X POST -d '
-          {
-            "query": "query { user(login: \"ImmortalDemonGod\") { contributionsCollection { contributionCalendar { totalContributions } } } }"
-          }' https://api.github.com/graphql | jq -r '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          # Fetch total contributions across all years using GitHub API
+          # GitHub API requires year-by-year queries for historical data
+          ACCOUNT_START_YEAR=2019
+          CURRENT_YEAR=$(date +%Y)
+          TOTAL_CONTRIBUTIONS=0
+          
+          for YEAR in $(seq $ACCOUNT_START_YEAR $CURRENT_YEAR); do
+            YEAR_START="${YEAR}-01-01T00:00:00Z"
+            YEAR_END="${YEAR}-12-31T23:59:59Z"
+            
+            YEAR_CONTRIBUTIONS=$(curl -s -H "Authorization: bearer $GITHUB_TOKEN" -X POST -d "{
+              \"query\": \"query { user(login: \\\"ImmortalDemonGod\\\") { contributionsCollection(from: \\\"$YEAR_START\\\", to: \\\"$YEAR_END\\\") { contributionCalendar { totalContributions } } } }\"
+            }" https://api.github.com/graphql | jq -r '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+            
+            echo "Year $YEAR: $YEAR_CONTRIBUTIONS contributions"
+            TOTAL_CONTRIBUTIONS=$((TOTAL_CONTRIBUTIONS + YEAR_CONTRIBUTIONS))
+          done
           
           # Get account creation date (Nov 29, 2019 based on streak stats)
           ACCOUNT_START="2019-11-29"
@@ -57,7 +69,7 @@ jobs:
           # Calculate commits per year
           COMMITS_PER_YEAR=$(echo "scale=0; $TOTAL_CONTRIBUTIONS / $YEARS_SINCE_START" | bc)
           
-          echo "Total contributions: $TOTAL_CONTRIBUTIONS"
+          echo "Total contributions (all time): $TOTAL_CONTRIBUTIONS"
           echo "Years active: $YEARS_SINCE_START"
           echo "Commits per year: $COMMITS_PER_YEAR"
           
