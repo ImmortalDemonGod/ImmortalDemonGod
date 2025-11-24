@@ -77,6 +77,18 @@ jobs:
           echo "COMMITS_PER_YEAR=$COMMITS_PER_YEAR" >> $GITHUB_ENV
           echo "TOTAL_CONTRIBUTIONS=$TOTAL_CONTRIBUTIONS" >> $GITHUB_ENV
       
+      - name: Determine streak display mode
+        run: |
+          STREAK_JSON=$(curl -s "https://streak-stats.demolab.com?user=ImmortalDemonGod&type=json")
+          CURRENT_STREAK=$(echo "$STREAK_JSON" | jq -r '.currentStreak.length')
+          echo "Current streak length: $CURRENT_STREAK"
+          if [ "$CURRENT_STREAK" -ge 7 ]; then
+            HIDE_CURRENT_STREAK=false
+          else
+            HIDE_CURRENT_STREAK=true
+          fi
+          echo "HIDE_CURRENT_STREAK=$HIDE_CURRENT_STREAK" >> $GITHUB_ENV
+      
       - name: Fetch Strava statistics (rolling 365 days)
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
@@ -170,6 +182,23 @@ jobs:
             next
           }
           /<!-- GITHUB-STATS-END -->/ {skip=0}
+          !skip
+          ' README_redesign.md > README_redesign.tmp && mv README_redesign.tmp README_redesign.md
+      
+      - name: Update streak card in README_redesign
+        run: |
+          HIDE="${{ env.HIDE_CURRENT_STREAK }}"
+          awk -v hide="$HIDE" '
+          /<!-- STREAK-CARD-START -->/ {
+            print "<!-- STREAK-CARD-START -->"
+            print "<p align=\"right\">"
+            printf "  <img align=\"right\" src=\"https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&hide_current_streak=%s\" alt=\"GitHub Streak Stats\" style=\"max-width: 100%%; width: 400px;\"/>\n", hide
+            print "</p>"
+            print "<!-- STREAK-CARD-END -->"
+            skip=1
+            next
+          }
+          /<!-- STREAK-CARD-END -->/ {skip=0; next}
           !skip
           ' README_redesign.md > README_redesign.tmp && mv README_redesign.tmp README_redesign.md
       
