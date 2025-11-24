@@ -14,14 +14,14 @@
 
 <!-- STREAK-CARD-START -->
 <p align="right">
-  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
+  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
 </p>
 <!-- STREAK-CARD-END -->
 
 You might notice my contribution graph is unusually active. My workflow is defined by:
 
 <!-- GITHUB-STATS-START -->
-- **📊 High-Velocity Iteration:** ~2369 commits/year
+- **📊 High-Velocity Iteration:** ~2370 commits/year
 <!-- GITHUB-STATS-END -->
 - **🔬 Granular Observability:** Every change is tracked
 - **⚡ Atomic Commits:** Driving automated research pipelines
