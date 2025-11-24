@@ -12,6 +12,10 @@
 
 ## 🎯 The Workflow
 
+<p align="right">
+  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
+</p>
+
 You might notice my contribution graph is unusually active. My workflow is defined by:
 
 <!-- GITHUB-STATS-START -->
@@ -21,10 +25,6 @@ You might notice my contribution graph is unusually active. My workflow is defin
 - **⚡ Atomic Commits:** Driving automated research pipelines
 
 I treat development as a continuous experiment where each commit generates data.
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak Stats" style="max-width: 100%; width: 500px;"/>
-</div>
 
 ---
 
@@ -73,12 +73,6 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 - ⚙️ **Systems Reliability:** Zero-tolerance for failure in critical systems
 - 🔍 **Diagnostic Precision:** Root cause analysis under pressure
 - 📐 **Operational Rigor:** Translating Navy discipline into code
-
-**Current Focus:**
-- 🔬 Advancing research
-- 📢 Growing public outreach
-- 🏆 Competitive programming mastery
-
 ---
 
 ## 🏃 Athletic Training
