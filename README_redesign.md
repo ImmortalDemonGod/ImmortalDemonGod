@@ -14,7 +14,7 @@
 
 <!-- STREAK-CARD-START -->
 <p align="right">
-  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
+  <img align="right" src="https://github-readme-streak-stats.herokuapp.com/?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,0d1117,0b1220,111827&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&hide_current_streak=true" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px;"/>
 </p>
 <!-- STREAK-CARD-END -->
 
