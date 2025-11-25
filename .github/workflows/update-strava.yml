@@ -80,15 +80,35 @@ jobs:
       - name: Determine streak display mode
         run: |
           STREAK_JSON=$(curl -s "https://streak-stats.demolab.com?user=ImmortalDemonGod&type=json")
-          CURRENT_STREAK=$(echo "$STREAK_JSON" | jq -r '.currentStreak.length')
-          echo "Current streak length: $CURRENT_STREAK"
-          if [ "$CURRENT_STREAK" -ge 7 ]; then
-            HIDE_CURRENT_STREAK=false
+          CURRENT_STREAK=$(echo "$STREAK_JSON" | jq -er '.currentStreak.length' 2>/dev/null || echo "error")
+          if [ "$CURRENT_STREAK" = "error" ]; then
+            echo "Streak API error or missing currentStreak; defaulting to hide streak and preserving cached image"
+            echo "STREAK_API_STATUS=error" >> $GITHUB_ENV
+            echo "HIDE_CURRENT_STREAK=true" >> $GITHUB_ENV
           else
-            HIDE_CURRENT_STREAK=true
+            echo "Current streak length: $CURRENT_STREAK"
+            if [ "$CURRENT_STREAK" -ge 7 ]; then
+              HIDE_CURRENT_STREAK=false
+            else
+              HIDE_CURRENT_STREAK=true
+            fi
+            echo "HIDE_CURRENT_STREAK=$HIDE_CURRENT_STREAK" >> $GITHUB_ENV
+            echo "STREAK_API_STATUS=ok" >> $GITHUB_ENV
           fi
-          echo "HIDE_CURRENT_STREAK=$HIDE_CURRENT_STREAK" >> $GITHUB_ENV
       
+      - name: Cache GitHub streak card image
+        run: |
+          if [ "${{ env.STREAK_API_STATUS }}" = "error" ]; then
+            echo "Skipping streak card download due to API error; keeping existing image"
+            exit 0
+          fi
+          HIDE="${{ env.HIDE_CURRENT_STREAK }}"
+          URL="https://streak-stats.demolab.com?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,050a12,0b1220,111827&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=${HIDE}"
+          echo "Fetching streak card image"
+          if ! curl -sS "$URL" -o streak-card.png; then
+            echo "Warning: failed to download streak card; keeping existing file if present" >&2
+          fi
+
       - name: Fetch Strava statistics (rolling 365 days)
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
@@ -187,12 +207,11 @@ jobs:
       
       - name: Update streak card in README_redesign
         run: |
-          HIDE="${{ env.HIDE_CURRENT_STREAK }}"
-          awk -v hide="$HIDE" '
+          awk '
           /<!-- STREAK-CARD-START -->/ {
             print "<!-- STREAK-CARD-START -->"
             print "<p align=\"right\">"
-            printf "  <img align=\"right\" src=\"https://streak-stats.demolab.com?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,050a12,0b1220,111827&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=%s\" alt=\"GitHub Streak Stats\" style=\"max-width: 100%%; width: 400px;\"/>\n", hide
+            print "  <img align=\"right\" src=\"https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/streak-card.png\" alt=\"GitHub Streak Stats\" style=\"max-width: 100%%; width: 400px;\"/>"
             print "</p>"
             print "<!-- STREAK-CARD-END -->"
             skip=1
@@ -207,6 +226,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md README_redesign.md heatmap.svg
+          if [ -f streak-card.png ]; then
+            git add streak-card.png
+          fi
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
