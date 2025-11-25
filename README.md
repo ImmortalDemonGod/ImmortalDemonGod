@@ -108,7 +108,7 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 **Status:** Allocating cycles for high-leverage architectural audits and specialized R&D contracts.
 
-*Objective: Funding next-generation compute acquisition (DGX Sparks & H100 NVLink Cluster).*
+*Objective: Funding next-generation compute acquisition ([DGX Spark](https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/) & H100 NVLink Cluster).*
 
 [![Email](https://img.shields.io/badge/Email-miguel.ingram.research%40gmail.com-blue?style=for-the-badge&logo=gmail)](mailto:miguel.ingram.research@gmail.com)
 
