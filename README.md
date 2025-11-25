@@ -93,7 +93,7 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-**131 activities** • **1053 km** • **119 hours** • **105 active days**
+**132 activities** • **1064 km** • **120 hours** • **106 active days**
 <!-- STRAVA-HEATMAP-END -->
 
 *Automatically updated daily from Strava API*
