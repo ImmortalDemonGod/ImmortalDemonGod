@@ -11,19 +11,20 @@
 ---
 
 ## 🎯 The Workflow
+<!-- STREAK-CARD-START -->
+<img align="right" src="./streak-card.svg" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px; margin-left: 20px;"/>
+<!-- STREAK-CARD-END -->
 
 You might notice my contribution graph is unusually active. My workflow is defined by:
 
 <!-- GITHUB-STATS-START -->
-- **📊 High-Velocity Iteration:** ~2370 commits/year
+- **📊 High-Velocity Iteration:** ~2365 commits/year
 <!-- GITHUB-STATS-END -->
 - **🔬 Granular Observability:** Every change is tracked
-  
+
 - **⚡ Atomic Commits:** Driving automated research pipelines
 
 *I treat development as a continuous experiment where each commit generates data.*
-
-
 
 ---
 
