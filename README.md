@@ -23,16 +23,7 @@ You might notice my contribution graph is unusually active. My workflow is defin
 
 *I treat development as a continuous experiment where each commit generates data.*
 
----
 
-## 🧭 Mission
-
-I'm engineering a **closed-loop "Cognitive and Operational Exoskeleton"**—a system that quantifies human output across physical, technical, and cognitive domains to validate the **Architect-Implementer-Verifier (AIV)** model of human-AI symbiosis. 
-
-> 🎧 **[Listen to the System Audit (38m)](https://github.com/ImmortalDemonGod/ImmortalDemonGod/releases/tag/v1.0-audit)**
-> *An independent forensic analysis of the Cultivation Operating System, dissecting the AIV Model, Cognitive Debt mitigation, and the infrastructure behind the 14k+ commit history since 2019.*
-
-The goal: scale individual productivity by orders of magnitude while actively mitigating cognitive debt through systematic measurement and intervention. *Status: [Internal Tool]*
 
 ---
 
@@ -73,6 +64,16 @@ Research proving the **["Compositional Gap"](https://github.com/ImmortalDemonGod
 A modular pipeline for 3D RNA folding using **TorsionBERT**, **MP-NeRF**, and **SE(3) Diffusion**.
 * **The Stack:** PyTorch Lightning, Hydra, Equivariant Neural Networks.
 * **The Objective:** Applying geometric constraints to biological foundation models outside of corporate walled gardens.
+---
+
+## 🧭 Mission
+
+I'm engineering a **closed-loop "Cognitive and Operational Exoskeleton"**—a system that quantifies human output across physical, technical, and cognitive domains to validate the **Architect-Implementer-Verifier (AIV)** model of human-AI symbiosis. 
+
+> 🎧 **[Listen to the System Audit (38m)](https://github.com/ImmortalDemonGod/ImmortalDemonGod/releases/tag/v1.0-audit)**
+> *An automated forensic analysis of the Cultivation Operating System, dissecting the AIV Model, Cognitive Debt mitigation, and the infrastructure behind the 14k+ commit history since 2019.*
+
+The goal: scale individual productivity by orders of magnitude while actively mitigating cognitive debt through systematic measurement and intervention. *Status: [Internal Tool]*
 
 ---
 
