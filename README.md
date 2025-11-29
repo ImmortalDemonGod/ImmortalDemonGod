@@ -26,7 +26,9 @@ You might notice my contribution graph is unusually active. My workflow is defin
 
 ## 🧭 Mission
 
-I'm engineering a **closed-loop "Cognitive and Operational Exoskeleton"**—a system that quantifies human output across physical, technical, and cognitive domains to validate the **Architect-Implementer-Verifier (AIV)** model of human-AI symbiosis. The goal: scale individual productivity by orders of magnitude while actively mitigating cognitive debt through systematic measurement and intervention. *Status: [Internal Tool]*
+I'm engineering a **closed-loop "Cognitive and Operational Exoskeleton"**—a system that quantifies human output across physical, technical, and cognitive domains to validate the **Architect-Implementer-Verifier (AIV)** model of human-AI symbiosis. 
+
+The goal: scale individual productivity by orders of magnitude while actively mitigating cognitive debt through systematic measurement and intervention. *Status: [Internal Tool]*
 
 ---
 
