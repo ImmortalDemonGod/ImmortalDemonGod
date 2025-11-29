@@ -81,13 +81,13 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 <div align="center">
 
-### Running, cycling, and strength training tracked on [Strava](https://www.strava.com/athletes/71946175) 🔥
+### Lifetime running volume tracked on [Strava](https://www.strava.com/athletes/71946175) 🔥
 
 <!-- STRAVA-HEATMAP-START -->
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-### 📊 Lifetime Stats
+### 📊 Lifetime Running Stats
 
 <table align="center">
 <tr>
@@ -100,7 +100,7 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 <!-- STRAVA-HEATMAP-END -->
 
-*Automatically updated daily from Strava API*
+*Lifetime running totals, automatically updated daily from Strava API*
 
 </div>
 

@@ -97,16 +97,16 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 
 <div align="center">
 
-### Running, cycling, and strength training tracked on [Strava](https://www.strava.com/athletes/71946175) 🔥
+### Lifetime running volume tracked on [Strava](https://www.strava.com/athletes/71946175) 🔥
 
 <!-- STRAVA-HEATMAP-START -->
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-**849 activities** • **3898 km** • **751 hours** • **462 active days**
+**849 runs** • **3898 km** • **751 hours** • **462 active days**
 <!-- STRAVA-HEATMAP-END -->
 
-*Automatically updated daily from Strava API*
+*Lifetime running totals, automatically updated daily from Strava API*
 
 </div>
 
