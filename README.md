@@ -28,6 +28,17 @@ You might notice my contribution graph is unusually active. My workflow is defin
 
 ---
 
+## 🔐 The Philosophy
+
+> *I operate as an independent lab to bypass the "Golden Handcuffs" of corporate IP capture. My goal is not just research output, but **Operational Sovereignty**—owning the compute, the code, and the discoveries.*
+
+My background is rooted in high-stakes engineering. I started in the **US Navy as a Nuclear Electronics Technician**, where I developed an obsessive focus on:
+
+- ⚙️ **Systems Reliability:** Zero-tolerance for failure in critical systems
+- 🔍 **Diagnostic Precision:** Root cause analysis under pressure
+- 📐 **Operational Rigor:** Translating Navy discipline into code
+
+---
 ## 🛠️ What I'm Building
 
 <table>
@@ -82,19 +93,6 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 
 ---
 
-## 🔐 The Philosophy
-
-> *I operate as an independent lab to bypass the "Golden Handcuffs" of corporate IP capture. My goal is not just research output, but **Operational Sovereignty**—owning the compute, the code, and the discoveries.*
-
-My background is rooted in high-stakes engineering. I started in the **US Navy as a Nuclear Electronics Technician**, where I developed an obsessive focus on:
-
-- ⚙️ **Systems Reliability:** Zero-tolerance for failure in critical systems
-- 🔍 **Diagnostic Precision:** Root cause analysis under pressure
-- 📐 **Operational Rigor:** Translating Navy discipline into code
-
-
----
-
 ## 🏃 Athletic Training
 
 <div align="center">
@@ -118,7 +116,7 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 ### 📡 Signal & Contract
 
-**Status:** Allocating cycles for high-leverage architectural audits and specialized R&D contracts.
+**Status:** Allocating cycles for high-leverage **Forensic Code Audits** and specialized **R&D contracts**.
 
 *Objective: Funding next-generation compute acquisition ([DGX Spark](https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/) & H100 NVLink Cluster).*
 
