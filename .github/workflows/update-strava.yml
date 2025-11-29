@@ -109,6 +109,12 @@ jobs:
             echo "Warning: failed to download streak card; keeping existing file if present" >&2
             exit 0
           fi
+          # Check if the downloaded file is valid SVG (not HTML error page)
+          if grep -qi "<!DOCTYPE html" streak-card-temp.svg || grep -qi "<html" streak-card-temp.svg; then
+            echo "Warning: downloaded file is HTML error page; keeping existing SVG" >&2
+            rm -f streak-card-temp.svg
+            exit 0
+          fi
           # Check if the downloaded SVG contains an error message
           if grep -qi "failed to retrieve" streak-card-temp.svg; then
             echo "Warning: downloaded SVG contains error message; keeping existing file" >&2
