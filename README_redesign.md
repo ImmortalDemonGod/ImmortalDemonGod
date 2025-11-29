@@ -85,7 +85,7 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-### 📊 Year in Review
+### 📊 Lifetime Stats
 
 <table align="center">
 <tr>
