@@ -29,6 +29,9 @@ You might notice my contribution graph is unusually active. My workflow is defin
 
 I'm engineering a **closed-loop "Cognitive and Operational Exoskeleton"**—a system that quantifies human output across physical, technical, and cognitive domains to validate the **Architect-Implementer-Verifier (AIV)** model of human-AI symbiosis. 
 
+> 🎧 **[Listen to the System Audit (38m)](https://github.com/ImmortalDemonGod/ImmortalDemonGod/releases/tag/v1.0-audit)**
+> *An independent forensic analysis of the Cultivation Operating System, dissecting the AIV Model, Cognitive Debt mitigation, and the infrastructure behind the 14k+ commit history since 2019.*
+
 The goal: scale individual productivity by orders of magnitude while actively mitigating cognitive debt through systematic measurement and intervention. *Status: [Internal Tool]*
 
 ---
