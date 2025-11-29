@@ -13,9 +13,7 @@
 ## 🎯 The Workflow
 
 <!-- STREAK-CARD-START -->
-<p align="right">
-  <img align="right" src="https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/streak-card.png" alt="GitHub Streak Stats" style="max-width: 100%%; width: 400px;"/>
-</p>
+<img align="right" src="./streak-card.svg" alt="GitHub Streak Stats" style="max-width: 100%; width: 400px; margin-left: 20px;"/>
 <!-- STREAK-CARD-END -->
 
 You might notice my contribution graph is unusually active. My workflow is defined by:
