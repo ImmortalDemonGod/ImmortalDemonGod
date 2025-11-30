@@ -103,7 +103,7 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 
 ![Strava Activity Heatmap](https://raw.githubusercontent.com/ImmortalDemonGod/ImmortalDemonGod/master/heatmap.svg)
 
-**849 runs** • **3898 km** • **751 hours** • **462 active days**
+**849 activities** • **3898 km** • **751 hours** • **462 active days**
 <!-- STRAVA-HEATMAP-END -->
 
 *Lifetime running totals, automatically updated daily from Strava API*
