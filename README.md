@@ -4,7 +4,7 @@
 
 ### *"I don't just write code; I build systems that generate data."*
 
-**Miguel Ingram** | AI Researcher
+**Miguel Ingram** | AI Research Engineer
 
 </div>
 
