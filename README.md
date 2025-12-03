@@ -97,29 +97,35 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 
 <div align="center">
 
-### Longitudinal Optimization Study
+### Longitudinal Optimization Study  
 **"Systematic Intervention on Biomechanical Limiters Under Environmental Stress"**
 
 </div>
 
-<tr>
-<td width="60%">
+> **Status:** *Data Collection Complete (103 Days). [(Active Research Artifact)](https://github.com/ImmortalDemonGod/bio-systems-engineering).*
 
-> **Status:** *Data Collection Complete (103 Days). [REPO WIP](https://github.com/ImmortalDemonGod/bio-systems-engineering).*
+<table>
+  <tr>
+    <td width="50%" valign="top">
 
-**The Engineering Challenge:**
-*   **Input:** High-frequency telemetry (HR, Cadence, Pace) from a trained subject.
-*   **Constraint:** Extreme environmental heat (>34°C) & sleep restriction.
-*   **Optimization Target:** Decouple mechanical efficiency from metabolic cost.
+### The Engineering Challenge
 
-**The Results (N=1):**
-*   **Efficiency Factor:** **+18.4%** (Mechanical rewiring successful)
-*   **Pace Improvement:** **-15.2%** at equivalent internal load
-*   **Durability:** **<2% Aerobic Decoupling** maintained in extreme heat
+- **Input:** High-frequency telemetry (HR, Cadence, Pace) from a trained subject.  
+- **Constraint:** Extreme environmental heat (>34°C) & sleep restriction.  
+- **Optimization Target:** Decouple mechanical efficiency from metabolic cost.
 
+    </td>
+    <td width="50%" valign="top">
 
-</td>
+### The Results (N=1)
 
+- **Efficiency Factor:** **+18%** (0.0180 → 0.0212 RPE 10 test–retest)  
+- **Pace Improvement:** **-15%** at equivalent internal load (5:03/km → 4:18/km)  
+- **Durability:** Aerobic decoupling under thermal stress dropped from **19.8% @ 32°C** to ~**4–5%**, maintaining **<5% drift** in the final 36°C RPE 10 test.
+
+    </td>
+  </tr>
+</table>
 
 <div align="center">
 
