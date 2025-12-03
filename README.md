@@ -93,11 +93,35 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 
 ---
 
-## 🏃 Athletic Training
+## 🏃 Bio-Systems Engineering
 
 <div align="center">
 
-### Lifetime running volume tracked on [Strava](https://www.strava.com/athletes/71946175) 🔥
+### Longitudinal Optimization Study
+**"Systematic Intervention on Biomechanical Limiters Under Environmental Stress"**
+
+</div>
+
+<tr>
+<td width="60%">
+
+> **Status:** *Data Collection Complete (103 Days). [REPO WIP](https://github.com/ImmortalDemonGod/bio-systems-engineering).*
+
+**The Engineering Challenge:**
+*   **Input:** High-frequency telemetry (HR, Cadence, Pace) from a trained subject.
+*   **Constraint:** Extreme environmental heat (>34°C) & sleep restriction.
+*   **Optimization Target:** Decouple mechanical efficiency from metabolic cost.
+
+**The Results (N=1):**
+*   **Efficiency Factor:** **+18.4%** (Mechanical rewiring successful)
+*   **Pace Improvement:** **-15.2%** at equivalent internal load
+*   **Durability:** **<2% Aerobic Decoupling** maintained in extreme heat
+
+
+</td>
+
+
+<div align="center">
 
 <!-- STRAVA-HEATMAP-START -->
 
@@ -106,7 +130,7 @@ The goal: scale individual productivity by orders of magnitude while actively mi
 **852 activities** • **3924 km** • **754 hours** • **464 active days**
 <!-- STRAVA-HEATMAP-END -->
 
-*Lifetime running totals, automatically updated daily from Strava API*
+*Lifetime running totals, automatically updated daily from [Strava](https://www.strava.com/athletes/71946175) 🔥 API*
 
 </div>
 
