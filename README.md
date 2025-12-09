@@ -57,10 +57,10 @@ A pedagogical operating system using **[Runtime AST Mutation](https://github.com
 <td width="50%">
 
 ### 🧠 Neural Affinity Framework
-Research proving the **["Compositional Gap"](https://github.com/ImmortalDemonGod/arc-taxonomy-reproduction/blob/master/Ingram_Merrit_2025_Neural_Affinity_Framework_ARC.pdf)** (models learn parts perfectly but fail to compose them) in Transformers. Validated against 302+ fine-tuned models.
+Research proving the **["Compositional Gap"](https://arxiv.org/abs/2512.07109)** (models learn parts perfectly but fail to compose them) in Transformers. Validated against 302+ fine-tuned models.
 
 [![Repo](https://img.shields.io/badge/Repo-arc--taxonomy-blue?style=for-the-badge&logo=github)](https://github.com/ImmortalDemonGod/arc-taxonomy-reproduction)
-[![Paper](https://img.shields.io/badge/Paper-PDF-red?style=flat-square)](https://github.com/ImmortalDemonGod/arc-taxonomy-reproduction/blob/master/Ingram_Merrit_2025_Neural_Affinity_Framework_ARC.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red?style=flat-square)](https://arxiv.org/abs/2512.07109)
 ![Validation](https://img.shields.io/badge/Taxonomy-97.5%25_Accuracy-success?style=flat-square)
 ![External](https://img.shields.io/badge/Validated-400_ViTARC_Models-purple?style=flat-square)
 ![Repro](https://img.shields.io/badge/Reproduce-5_Minutes-blue?style=flat-square)
