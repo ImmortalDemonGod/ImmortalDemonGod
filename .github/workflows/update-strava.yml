@@ -78,8 +78,10 @@ jobs:
           echo "TOTAL_CONTRIBUTIONS=$TOTAL_CONTRIBUTIONS" >> $GITHUB_ENV
       
       - name: Determine streak display mode
+        env:
+          STREAK_STATS_URL: ${{ vars.STREAK_STATS_URL || 'https://streak-stats.demolab.com' }}
         run: |
-          STREAK_JSON=$(curl -s "https://streak-stats.demolab.com?user=ImmortalDemonGod&type=json")
+          STREAK_JSON=$(curl -s "${STREAK_STATS_URL}?user=ImmortalDemonGod&type=json")
           CURRENT_STREAK=$(echo "$STREAK_JSON" | jq -er '.currentStreak.length' 2>/dev/null || echo "error")
           if [ "$CURRENT_STREAK" = "error" ]; then
             echo "Streak API error or missing currentStreak; defaulting to hide streak and preserving cached image"
@@ -97,13 +99,15 @@ jobs:
           fi
       
       - name: Cache GitHub streak card image
+        env:
+          STREAK_STATS_URL: ${{ vars.STREAK_STATS_URL || 'https://streak-stats.demolab.com' }}
         run: |
           if [ "${{ env.STREAK_API_STATUS }}" = "error" ]; then
             echo "Skipping streak card download due to API error; keeping existing image"
             exit 0
           fi
           HIDE="${{ env.HIDE_CURRENT_STREAK }}"
-          URL="https://streak-stats.demolab.com?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,050a12,0b1220,111827&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=${HIDE}"
+          URL="${STREAK_STATS_URL}?user=ImmortalDemonGod&theme=dark&hide_border=true&background=45,050a12,0b1220,111827&ring=58a6ff&fire=ffd166&currStreakLabel=58a6ff&card_width=400&hide_current_streak=${HIDE}"
           echo "Fetching streak card image"
           if ! curl -sS "$URL" -o streak-card-temp.svg; then
             echo "Warning: failed to download streak card; keeping existing file if present" >&2
