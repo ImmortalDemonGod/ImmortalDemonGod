@@ -1,1 +1,23 @@
+# Binaries
 strava-heatmap
+*.exe
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+/tmp/
+
+# IDE
+.vscode/
+.idea/
+
+# Go
+*.test
+*.out
+vendor/
