@@ -1,4 +1,4 @@
-module github.com/samuellee/StravaGraph
+module github.com/ImmortalDemonGod/ImmortalDemonGod
 
 go 1.21
 
