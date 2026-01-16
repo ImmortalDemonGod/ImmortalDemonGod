@@ -4,7 +4,7 @@
 
 ### *"I don't just write code; I build systems that generate data."*
 
-**Miguel Ingram** | AI Research Engineer
+**Miguel Ingram**  AI Research Engineer | Blue Thumb Volunteer
 
 </div>
 
@@ -38,6 +38,9 @@ My background is rooted in high-stakes engineering. I started in the **US Navy a
 - 🔍 **Diagnostic Precision:** Root cause analysis under pressure
 - 📐 **Operational Rigor:** Translating Navy discipline into code
 
+- After transitioning from military service, I've applied these principles 
+to environmental research as a Blue Thumb volunteer, validating citizen 
+science data quality through statistical analysis.
 ---
 ## 🛠️ What I'm Building
 
