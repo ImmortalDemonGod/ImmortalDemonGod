@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/samuellee/StravaGraph/internal/config"
-	"github.com/samuellee/StravaGraph/internal/processor"
-	"github.com/samuellee/StravaGraph/internal/strava"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/config"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/processor"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/strava"
 )
 
 // Generator handles SVG generation
