@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/samuellee/StravaGraph/internal/strava"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/strava"
 )
 
 // HeatmapCell represents a single cell in the heatmap
