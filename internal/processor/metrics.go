@@ -4,7 +4,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/samuellee/StravaGraph/internal/strava"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/strava"
 )
 
 // MetricsCalculator calculates activity metrics
