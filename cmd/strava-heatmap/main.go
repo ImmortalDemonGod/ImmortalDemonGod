@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
-	"github.com/samuellee/StravaGraph/internal/auth"
-	"github.com/samuellee/StravaGraph/internal/config"
-	"github.com/samuellee/StravaGraph/internal/github"
-	"github.com/samuellee/StravaGraph/internal/strava"
-	"github.com/samuellee/StravaGraph/internal/svg"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/auth"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/config"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/github"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/strava"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/svg"
 )
 
 const (
