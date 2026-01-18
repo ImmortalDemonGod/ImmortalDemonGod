@@ -4,7 +4,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/samuellee/StravaGraph/internal/strava"
+	"github.com/ImmortalDemonGod/ImmortalDemonGod/internal/strava"
 )
 
 // StatsGenerator generates comprehensive statistics
