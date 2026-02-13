@@ -4,7 +4,7 @@
 
 ### *"I don't just write code; I build systems that generate data."*
 
-**Miguel Ingram** |  AI Research Engineer | Blue Thumb Volunteer |
+**Miguel Ingram** |  AI Research Engineer | Blue Thumb Volunteer 
 
 </div>
 
